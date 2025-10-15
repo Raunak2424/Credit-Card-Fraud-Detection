@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Data Processor</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Credit Card Data Processor</h1>
+
+    <div class="form-container">
+      <h2 class="subheader">Upload CSV File</h2>
+
+      <label for="fileInput" class="upload-label" id="uploadLabel">
+        <img src="csvlogo.png" alt="Upload" class="upload-icon" />
+        <span class="upload-text">Drag & Drop or Click to select CSV</span>
+        <input type="file" id="fileInput" class="upload-input" accept=".csv">
+      </label>
+
+      <p id="fileName" class="file-name">No file selected</p>
+
+      <button id="processBtn">Process Data</button>
+
+      <!-- Progress Bar -->
+      <div id="progressContainer" class="progress-container hidden">
+        <div id="progressBar" class="progress-bar">0%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-screen overlay -->
+  <div id="overlayLoader" class="overlay hidden">
+    <div class="overlay-content">
+      <div class="overlay-spinner"></div>
+      <p>Processing your file... please wait</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

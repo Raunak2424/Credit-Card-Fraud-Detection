@@ -1,0 +1,208 @@
+/* Basic reset & body */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  margin-bottom: 25px;
+}
+
+/* Form container with glass effect */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* Subheader */
+.subheader {
+  color: #e0e0e0;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Upload label */
+.upload-label {
+  border: 2px dashed rgba(255,255,255,0.7);
+  border-radius: 15px;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-label:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.02);
+}
+
+.upload-icon {
+  width: 60px;
+  transition: transform 0.3s ease;
+}
+
+.upload-label:hover .upload-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.upload-text {
+  color: #fff;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.upload-input {
+  display: none;
+}
+
+/* File name */
+.file-name {
+  color: #e0e0e0;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Button */
+button {
+  background: linear-gradient(90deg, #ff8a00 0%, #e52e71 100%);
+  border-radius: 50px;
+  padding: 15px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Progress bar */
+.progress-container {
+  width: 100%;
+  height: 25px;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 25px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff8a00 0%, #e52e71 100%);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 25px;
+  transition: width 0.4s ease;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+}
+
+.overlay-spinner {
+  border: 6px solid rgba(255,255,255,0.3);
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px auto;
+}
+
+@keyframes spin {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+.overlay-content p {
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Toast */
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1001;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from{bottom:0;opacity:0;} to{bottom:30px;opacity:1;}
+}
+@keyframes fadeout{
+  from{bottom:30px;opacity:1;} to{bottom:0;opacity:0;}
+}
+
+.hidden { display: none; }
